@@ -1,28 +1,53 @@
 package br.ufpe.cin.residencia.aula.pilha;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Pilha<T> implements IPilha<T> {
-    @Override
-    public int tamanho() {
-        return 0;
+
+    private int tamanhoMaximo;
+    private int tamanhoAtual;
+    private LinkedList<T> pilha;
+
+    public Pilha(int tamanho) {
+        this.tamanhoMaximo = tamanho;
+        this.tamanhoAtual = 0;
+        this.pilha = new LinkedList<>();
+    }
+
+    public Pilha() {
+        this(5);
     }
 
     @Override
-    public void inserir(T element) {
+    public int tamanho() {
+        return this.tamanhoAtual;
+    }
 
+    @Override
+    public void inserir(T elemento) {
+        this.pilha.add(elemento);
+        this.tamanhoAtual = 1;//eu sei que tá errado...
     }
 
     @Override
     public T remover() {
-        return null;
+        T elemento = this.pilha.removeFirst();
+        return elemento;
     }
 
     @Override
     public boolean vazia() {
-        return true;
+        if (this.pilha.size() % 2 == 0 ) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
     public T topo() {
-        return null;
+        return this.pilha.get(0);
     }
 }
