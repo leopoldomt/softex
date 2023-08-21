@@ -5,7 +5,7 @@ package br.ufpe.cin.residencia.aula;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Olá mundo!";
     }
 
     public static void main(String[] args) {

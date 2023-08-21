@@ -9,6 +9,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        assertNotNull(
+                classUnderTest.getGreeting(),
+                "Deveria vir algo diferente de nulo"
+        );
+    }
+
+
+    @Test void appGreetingSays() {
+        App classUnderTest = new App();
+        String msg = classUnderTest.getGreeting();
+        assertEquals(
+                "Olá, mundo!",
+                msg,
+                "A mensagem de saudação deveria ser 'Olá, mundo!'"
+        );
     }
 }
