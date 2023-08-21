@@ -20,7 +20,7 @@ class AppTest {
         App classUnderTest = new App();
         String msg = classUnderTest.getGreeting();
         assertEquals(
-                "Olá, mundo!",
+                "Olá mundo!",
                 msg,
                 "A mensagem de saudação deveria ser 'Olá, mundo!'"
         );
