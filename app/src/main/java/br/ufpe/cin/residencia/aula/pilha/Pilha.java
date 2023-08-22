@@ -6,12 +6,10 @@ import java.util.List;
 public class Pilha<T> implements IPilha<T> {
 
     private int tamanhoMaximo;
-    private int tamanhoAtual;
     private LinkedList<T> pilha;
 
     public Pilha(int tamanho) {
         this.tamanhoMaximo = tamanho;
-        this.tamanhoAtual = 0;
         this.pilha = new LinkedList<>();
     }
 
@@ -21,33 +19,39 @@ public class Pilha<T> implements IPilha<T> {
 
     @Override
     public int tamanho() {
-        return this.tamanhoAtual;
+        return this.pilha.size();
     }
 
     @Override
     public void inserir(T elemento) {
-        this.pilha.add(elemento);
-        this.tamanhoAtual = 1;//eu sei que tá errado...
+        if (this.pilha.size() < this.tamanhoMaximo) {
+            this.pilha.addFirst(elemento);
+        }
+        else {
+            throw new OverflowStackException("Overflow da pilha");
+        }
     }
 
     @Override
     public T remover() {
-        T elemento = this.pilha.removeFirst();
+        T elemento = this.topo();
+        this.pilha.removeFirst();
         return elemento;
     }
 
     @Override
     public boolean vazia() {
-        if (this.pilha.size() % 2 == 0 ) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.pilha.isEmpty();
+//        return this.pilha.size()==0;
     }
 
     @Override
     public T topo() {
-        return this.pilha.get(0);
+        if (this.vazia()) {
+            throw new UnderflowStackException("Underflow da pilha");
+        }
+        else {
+            return this.pilha.peek();
+        }
     }
 }
