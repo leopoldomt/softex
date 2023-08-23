@@ -38,6 +38,23 @@ public class App {
         return y;
     }
 
+    public int m(int i) {
+        while (i<10) {
+            if (i == 100) {
+                i = i + 1;
+                i *= 2;
+            }
+            ++i;
+        }
+        return i;
+    }
+
+    public int fun(boolean a) {
+        int x = 0;
+        if (a) x = 1;
+        return 100/x;
+    }
+
     public static void main(String[] args) {
 //        App a = new App();
 //        System.out.println(a.f(12,true,true,true));
