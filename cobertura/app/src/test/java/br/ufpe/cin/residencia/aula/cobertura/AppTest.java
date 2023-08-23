@@ -3,12 +3,83 @@
  */
 package br.ufpe.cin.residencia.aula.cobertura;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
+    App classUnderTest;
+
+    @BeforeEach
+    void setupClassUnderTest() {
+        classUnderTest = new App();
+    }
+
+    @Test
+    void appMain() {
+        App.main(new String[]{});
+    }
+
+    @Test
+    void appHasAGreeting() {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    @Test
+    void f_TTT() {
+        int resultado = classUnderTest.f(
+                12,
+                true, true, true
+        );
+        assertEquals(12, resultado);
+    }
+
+    @Test
+    void f_FTT() {
+        int resultado = classUnderTest.f(
+                12,
+                false, true, true
+        );
+        assertEquals(11, resultado);
+    }
+
+    @Test
+    void f_FFF() {
+        int resultado = classUnderTest.f(
+                12,
+                false, false, false
+        );
+        assertEquals(0, resultado);
+    }
+
+    //foo(0,2)
+    @Test
+    void foo_0_2() {
+        int resultado = classUnderTest.foo(0,2);
+        assertEquals(0, resultado);
+    }
+
+    //foo(4,0)
+    @Test
+    void foo_4_2() {
+        int resultado = classUnderTest.foo(4,2);
+        assertEquals(2, resultado);
+    }
+
+    @Test
+    void foo_4_0() {
+        int resultado = classUnderTest.foo(4,0);
+        assertEquals(1, resultado);
+    }
+
+    @Test
+    void foo_0_0() {
+        int resultado = classUnderTest.foo(0,0);
+        assertEquals(1, resultado);
+    }
+
+
+
 }

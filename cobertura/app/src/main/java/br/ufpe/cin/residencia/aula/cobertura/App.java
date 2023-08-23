@@ -8,7 +8,41 @@ public class App {
         return "Hello World!";
     }
 
+    //foo(0,2) == 0
+    //foo(4,2) == 2
+    //foo(0,2) == 0
+    //foo(4,0) == 0
+    public int foo(int a, int b) {
+        boolean cond = false;
+        if (a != 0 || b == 0) {
+            int c = 1;
+            if (cond) {
+                System.out.println("nunca executa aqui");
+            }
+            if (b != 0) {
+                c = a / b;
+            }
+            return c;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    public int f(int i, boolean c1, boolean c2, boolean c3) {
+        int x = i;
+        int y = 0;
+        if (c1) x++;
+        if (c2) x--;
+        if (c3) y = x;
+        return y;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+//        App a = new App();
+//        System.out.println(a.f(12,true,true,true));
+//        System.out.println(a.f(12,false,true,true));
+//        System.out.println(a.f(12,true,false,true));
+//        System.out.println(a.f(12,false,false,true));
     }
 }
