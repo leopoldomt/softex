@@ -1,6 +1,6 @@
 package br.ufpe.cin.residencia.aula.esportes;
 
-public interface ITime {
+public interface ITime extends Comparable<ITime> {
 
     public String getNome();
 

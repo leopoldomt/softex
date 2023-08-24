@@ -15,15 +15,5 @@ public interface IJogador {
 
     public int mediaGols();
 
-    public int faltasRecebidas();
-
-    public boolean lesionado();
-
-    public void levouFalta();
-
-    public boolean candidatoMelhorJogador();
-
-    public boolean expulso();
-
 
 }
