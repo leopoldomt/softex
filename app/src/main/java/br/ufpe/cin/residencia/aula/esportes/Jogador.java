@@ -5,7 +5,6 @@ public class Jogador implements IJogador {
     private int golsMarcados;
     private int cartoesAmarelos;
     private int cartoesVermelhos;
-    private int faltasRecebidas;
     private int partidasJogadas;
 
     public Jogador(String nome) {
