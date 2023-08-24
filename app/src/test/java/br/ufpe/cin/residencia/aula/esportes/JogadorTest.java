@@ -3,6 +3,7 @@ package br.ufpe.cin.residencia.aula.esportes;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -13,8 +14,9 @@ class JogadorTest {
 
     @BeforeEach
     void setUp() {
-        jogador = mock(IJogador.class);
-        when(jogador.golsMarcados()).thenReturn(0).thenReturn(1);
+//        jogador = mock(IJogador.class);
+//        when(jogador.golsMarcados()).thenReturn(0).thenReturn(1);
+        jogador = new Jogador("Teste");
     }
 
     @AfterEach
@@ -34,12 +36,12 @@ class JogadorTest {
         int qtdeGolsMarcados = jogador.golsMarcados();
         jogador.marcarGol();
         assertEquals(
-                qtdeGolsMarcados+1,
+                qtdeGolsMarcados + 1,
                 jogador.golsMarcados()
         );
         jogador.marcarGol();
         assertEquals(
-                qtdeGolsMarcados+2,
+                qtdeGolsMarcados + 2,
                 jogador.golsMarcados()
         );
     }

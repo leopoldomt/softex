@@ -58,7 +58,7 @@ public class App {
         softex_vs_tabajara.levarCartaoVermelho(softex,lovis);
         softex_vs_tabajara.marcarGol(tabajara,kuki);
         softex_vs_tabajara.encerrarPartida();
-        
+
         IPartida softex_vs_santa = new Partida(softex, santinha);
         IPartida softex_vs_retro = new Partida(softex, retro);
         IPartida tabajara_vs_santa = new Partida(tabajara, santinha);

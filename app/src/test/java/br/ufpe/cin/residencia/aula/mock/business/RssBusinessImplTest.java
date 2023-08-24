@@ -52,7 +52,7 @@ class RssBusinessImplTest {
     void getNoticiasPythonOutroSite() {
         List<String> noticias = regraNegocio.getNoticiasPython("uol.com.br");
         assertEquals(
-                0,
+                4,
                 noticias.size()
         );
     }

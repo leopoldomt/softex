@@ -33,10 +33,12 @@ class CoberturaTest {
 
     @Test
     void path_TFT() {
-        int resultado = classUnderTest.pathCoverage(
-                true, false, true
+        assertThrows(
+                ArithmeticException.class,
+                () -> classUnderTest.pathCoverage(
+                        true, false, true
+                )
         );
-        assertEquals(0, resultado);
     }
 
     @Test
@@ -69,64 +71,69 @@ class CoberturaTest {
     //foo(0,2)
     @Test
     void foo_0_2() {
-        int resultado = classUnderTest.foo(0,2);
+        int resultado = classUnderTest.foo(0, 2);
         assertEquals(0, resultado);
     }
 
     //foo(4,0)
     @Test
     void foo_4_2() {
-        int resultado = classUnderTest.foo(4,2);
+        int resultado = classUnderTest.foo(4, 2);
         assertEquals(2, resultado);
     }
 
     @Test
     void foo_4_0() {
-        int resultado = classUnderTest.foo(4,0);
+        int resultado = classUnderTest.foo(4, 0);
         assertEquals(1, resultado);
     }
 
     @Test
     void foo_0_0() {
-        int resultado = classUnderTest.foo(0,0);
+        int resultado = classUnderTest.foo(0, 0);
         assertEquals(1, resultado);
     }
 
-    @Test void m_2() {
+    @Test
+    void m_2() {
         int resultado = classUnderTest.m(2);
         assertEquals(10, resultado);
     }
 
-    @Test void m_3() {
+    @Test
+    void m_3() {
         int resultado = classUnderTest.m(3);
         assertEquals(10, resultado);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {0,1,2,3,4,5,6,7,8,9,10})
+    @ValueSource(ints = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void test_m_com_i_menor_que_10(int value) {
         int resultado = classUnderTest.m(value);
         assertEquals(10, resultado);
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {10,11,12,13,14,15,16,17,18,19,50,32,44,88,90,100})
+    @ValueSource(ints = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 50, 32, 44, 88, 90, 100})
     void test_m_com_i_maior_que_10(int value) {
         int resultado = classUnderTest.m(value);
         assertEquals(value, resultado);
     }
 
-    @Test void m_12() {
+    @Test
+    void m_12() {
         int resultado = classUnderTest.m(12);
         assertEquals(12, resultado);
     }
 
-    @Test void fun_a_T() {
+    @Test
+    void fun_a_T() {
         int resultado = classUnderTest.fun(true);
         assertEquals(100, resultado);
     }
 
-    @Test void fun_a_F() {
+    @Test
+    void fun_a_F() {
         assertThrows(
                 ArithmeticException.class,
                 () -> classUnderTest.fun(false)

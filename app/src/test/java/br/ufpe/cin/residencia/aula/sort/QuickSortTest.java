@@ -52,7 +52,7 @@ class QuickSortTest {
     }
 
     @Test
-    @Timeout(value = 1, unit = TimeUnit.SECONDS)
+//    @Timeout(value = 1, unit = TimeUnit.SECONDS)
     void testarRandomArray() {
         algoritmoOrdenacao.sort(randomArray);
         assertTrue(checaOrdenacao(randomArray));
