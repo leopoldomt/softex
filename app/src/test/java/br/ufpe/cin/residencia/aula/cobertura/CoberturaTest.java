@@ -16,6 +16,30 @@ class CoberturaTest {
     }
 
     @Test
+    void path_TTT() {
+        int resultado = classUnderTest.pathCoverage(
+                true, true, true
+        );
+        assertEquals(1, resultado);
+    }
+
+    @Test
+    void path_FFF() {
+        int resultado = classUnderTest.pathCoverage(
+                false, false, false
+        );
+        assertEquals(0, resultado);
+    }
+
+    @Test
+    void path_TFT() {
+        int resultado = classUnderTest.pathCoverage(
+                true, false, true
+        );
+        assertEquals(0, resultado);
+    }
+
+    @Test
     void f_TTT() {
         int resultado = classUnderTest.f(
                 12,

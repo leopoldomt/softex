@@ -31,6 +31,21 @@ public class Cobertura {
         return y;
     }
 
+    public int pathCoverage(boolean c1, boolean c2, boolean c3) {
+        int x = 2;
+        int y = 0;
+        if (c1) {
+            x = x-2;
+        }
+        if (c2) {
+            x = x+2;
+        }
+        if (c3) {
+            y = 2/x;
+        }
+        return y;
+    }
+
     public int m(int i) {
         while (i<10) {
             if (i == 100) {
